@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
+import { API_URL } from "../config";
 import "./worldBestCardmon.css";
-
-const API_URL = "http://localhost:4000";
 
 const WorldBestCardamom = () => {
     const [section, setSection] = useState(null);

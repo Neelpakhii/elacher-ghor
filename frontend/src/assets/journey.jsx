@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
+import { API_URL } from "../config";
 import "./journey.css";
-
-const API_URL = "http://localhost:4000";
 
 const Journey = () => {
     const [section, setSection] = useState(null);

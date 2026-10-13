@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { API_URL } from "../config";
 import "./hero.css";
 
 const Hero = () => {
@@ -20,7 +21,7 @@ const Hero = () => {
     };
 
     useEffect(() => {
-        fetch("http://localhost:4000/heroes")
+        fetch(`${API_URL}/heroes`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Failed to fetch hero images");
@@ -68,7 +69,7 @@ const Hero = () => {
                         ]
                             .filter(Boolean)
                             .join(" ")}
-                        src={`http://localhost:4000${image.image}`}
+                        src={`${API_URL}${image.image}`}
                         alt={image.alt || `Hero banner ${index + 1}`}
                         aria-hidden={!isActive}
                     />

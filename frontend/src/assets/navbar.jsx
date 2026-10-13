@@ -7,13 +7,12 @@ import {
     Menu,
     X,
 } from "lucide-react";
+import { API_URL, getImageUrl } from "../config";
 import "./navbar.css";
-
-const API_URL = "http://localhost:4000";
 
 const navLinks = [
     { name: "Home", path: "/", end: true },
-    { name: "About", path: "/about", end: false},
+    { name: "About", path: "/about", end: false },
     { name: "Shop", path: "/shop" },
     { name: "Recipes", path: "/recipes" },
     { name: "Blogs", path: "/blogs" },
@@ -37,15 +36,7 @@ const Navbar = () => {
                 return response.json();
             })
             .then((data) => {
-                const logoPath = data.navbar?.logo;
-
-                if (logoPath) {
-                    setLogo(
-                        logoPath.startsWith("http")
-                            ? logoPath
-                            : `${API_URL}${logoPath}`
-                    );
-                }
+                setLogo(getImageUrl(data.navbar?.logo));
             })
             .catch((error) => {
                 console.error("Navbar error:", error);
@@ -95,10 +86,7 @@ const Navbar = () => {
             <div className="navbar-logo">
                 <NavLink to="/" aria-label="Elaicher Ghor Home">
                     {logo && (
-                        <img
-                            src={logo}
-                            alt="Elaicher Ghor"
-                        />
+                        <img src={logo} alt="Elaicher Ghor" />
                     )}
                 </NavLink>
             </div>
@@ -108,9 +96,7 @@ const Navbar = () => {
                     type="button"
                     className="navbar-icon"
                     aria-label="Search"
-                    onClick={() => {
-                        // Connect your search functionality here
-                    }}
+                    onClick={() => {}}
                 >
                     <Search />
                 </button>
@@ -166,9 +152,7 @@ const Navbar = () => {
                         }
                     >
                         {link.name}
-                        <span className="navbar-link-arrow">
-                            ↗
-                        </span>
+                        <span className="navbar-link-arrow">↗</span>
                     </NavLink>
                 ))}
             </nav>

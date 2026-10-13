@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
+import { API_URL } from "../config";
 import "./footer.css";
-
-const API_URL = "http://localhost:4000";
 
 const SocialIcon = ({ name }) => {
     switch (name.toLowerCase()) {

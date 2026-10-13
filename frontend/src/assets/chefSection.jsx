@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
+import { API_URL, getImageUrl } from "../config";
 import "./chefSection.css";
-
-const API_URL = "http://localhost:4000";
 
 const ChefSection = () => {
     const [chef, setChef] = useState(null);
@@ -20,11 +19,7 @@ const ChefSection = () => {
 
     if (!chef) return null;
 
-    const imageSrc = chef.image
-        ? chef.image.startsWith("http")
-            ? chef.image
-            : `${API_URL}${chef.image}`
-        : "";
+    const imageSrc = getImageUrl(chef.image);
 
     return (
         <section className="chef-section">

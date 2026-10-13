@@ -1,9 +1,8 @@
-
 import { useEffect, useState } from "react";
+import { API_URL } from "../config";
 import "./whyBest.css";
 
-const API_URL = "http://localhost:4000";
-const ROTATION_INTERVAL = 2000;
+const ROTATION_INTERVAL = 4000;
 
 const WhyBest = () => {
     const [section, setSection] = useState(null);
@@ -44,7 +43,7 @@ const WhyBest = () => {
 
     const qualities = section?.qualities ?? [];
 
-    // Automatic rotation every 5 seconds
+    // Automatic rotation
     useEffect(() => {
         if (isPaused || qualities.length <= 1) {
             return;

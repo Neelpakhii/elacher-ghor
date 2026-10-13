@@ -1,10 +1,11 @@
+import { API_URL } from "../config";
 import "./productCard.css";
 
 const ProductCard = ({ product }) => {
     const imageSrc = product.image
         ? product.image.startsWith("http")
             ? product.image
-            : `http://localhost:4000${product.image}`
+            : `${API_URL}${product.image}`
         : "";
 
     return (

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
+import { API_URL, getImageUrl } from "../config";
 import "./doctor.css";
-
-const API_URL = "http://localhost:4000";
 
 const Doctor = () => {
     const [section, setSection] = useState(null);
@@ -22,9 +21,7 @@ const Doctor = () => {
 
     if (!section) return null;
 
-    const imageUrl = section.image?.startsWith("http")
-        ? section.image
-        : `${API_URL}${section.image || ""}`;
+    const imageUrl = getImageUrl(section.image);
 
     return (
         <section className="doctor-section" id="doctor">
@@ -43,7 +40,7 @@ const Doctor = () => {
             </div>
 
             <div className="doctor-section__image-wrap">
-                {section.image && (
+                {imageUrl && (
                     <img
                         className="doctor-section__image"
                         src={imageUrl}

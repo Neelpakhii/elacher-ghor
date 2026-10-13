@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { API_URL } from "../config";
 import ProductCard from "./productCard.jsx";
 import "./productSection.css";
 
@@ -8,7 +9,7 @@ const ProductSection = () => {
     const [error, setError] = useState("");
 
     useEffect(() => {
-        fetch("http://localhost:4000/products")
+        fetch(`${API_URL}/products`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error("Could not load products.");
