@@ -4,7 +4,7 @@ import CertifyBest from "../../components/about/certifyBest";
 import Origin from "../../components/about/origin";
 import Pioneer from "../../components/about/pioneer";
 import Story from "../../components/about/story";
-import ThreeStar from "../../components/about/threestar";
+import ThreeStar from "../../components/about/threeStar";
 import Newsletter from "../../components/home/newsLetter";
 import WorldBestCardamom from "../../components/home/worldBestCardamom";
 
