@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { API_URL } from "../../config.js";
 import ProductCard from "./productCard.jsx";
 import "./productSection.css";
@@ -28,6 +29,8 @@ const ProductSection = () => {
             });
     }, []);
 
+    const featuredProducts = products.slice(0, 3);
+
     return (
         <section className="product-section" id="products">
             <div className="product-section__header">
@@ -42,12 +45,20 @@ const ProductSection = () => {
                 <p>No products are available right now.</p>
             )}
 
-            {!loading && !error && products.length > 0 && (
-                <div className="product-section__grid">
-                    {products.map((product) => (
-                        <ProductCard key={product.id} product={product} />
-                    ))}
-                </div>
+            {!loading && !error && featuredProducts.length > 0 && (
+                <>
+                    <div className="product-section__grid">
+                        {featuredProducts.map((product) => (
+                            <ProductCard key={product.id} product={product} />
+                        ))}
+                    </div>
+
+                    <div className="product-section__actions">
+                        <Link className="product-section__buy-now" to="/shop">
+                            Buy Now
+                        </Link>
+                    </div>
+                </>
             )}
         </section>
     );

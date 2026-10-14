@@ -3,6 +3,7 @@ import Navbar from "./components/navbar.jsx";
 import Footer from "./components/footer.jsx";
 import Home from "./pages/home/home.jsx";
 import About from "./pages/about/about.jsx"
+import Shop from "./pages/shop/shop.jsx";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About/>}/>
+          <Route path="/shop" element = {<Shop/>}/>
           <Route path="*" element={<div>404 - Not Found</div>} />
         </Routes>
       </main>
