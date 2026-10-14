@@ -1,0 +1,13 @@
+.about-image {
+    width: 100%;
+    overflow: hidden;
+    background: #f8f6f0;
+}
+
+.about-image__photo {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+}
