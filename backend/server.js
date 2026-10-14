@@ -13,6 +13,7 @@ const __dirname = path.dirname(__filename);
 // Data files
 const dataFile = path.join(__dirname, "data","home", "data.json");
 const aboutDataFile = path.join(__dirname, "data", "about", "data.json");
+const shopDataFile = path.join(__dirname,"data","shop", "data.json")
 
 // Image folder
 const imageFolder = path.join(__dirname, "public", "images");
@@ -81,6 +82,26 @@ app.get("/about", (req, res) => {
         });
     }
 });
+
+//shopdata
+app.get("/shop",(req,res)=>{
+    try {
+        if(!fs.existsSync(shopDataFile)){
+            return res.json({
+                message: "Data not found"
+            })
+        }
+        const shopData =JSON.parse( fs.readFileSync(shopDataFile, "utf-8"));
+        return res.json(shopData);
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            message: "Internal server error"
+        });
+    }
+}
+
+)
 
 // Handle unknown routes
 app.use((req, res) => {

@@ -33,7 +33,20 @@
       "price": 399,
       "originalPrice": 899,
       "image": "/images/home/green-card.png"
-    }
+    },{
+    "id": "orange",
+    "name": "Orange Grade (6.5-7.5mm) Cardamom",
+    "price": 1899,
+    "originalPrice": 3000,
+    "image": "/images/home/orange-card.png"
+  },
+  {
+    "id": "red",
+    "name": "Red Grade (6-7mm) Cardamom",
+    "price": 999,
+    "originalPrice": 1500,
+    "image": "/images/home/red-card.png"
+  }
   ],
   "chefSection": {
   "heading": "Anupama Mukherjee’s Favourite",
