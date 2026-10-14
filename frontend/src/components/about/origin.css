@@ -46,6 +46,29 @@
     font-style: italic;
 }
 
+/* Tablet */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .origin {
+        margin-top: -52px;
+        padding: 0 20px;
+    }
+
+    .origin__content {
+        padding: 40px 36px;
+    }
+
+    .origin__content h2 {
+        font-size: clamp(28px, 4vw, 36px);
+    }
+
+    .origin__content p {
+        max-width: 720px;
+        font-size: 15px;
+        line-height: 1.75;
+    }
+}
+
+/* Mobile */
 @media (max-width: 600px) {
     .origin {
         margin-top: -36px;
@@ -54,6 +77,15 @@
 
     .origin__content {
         padding: 30px 22px;
+    }
+
+    .origin__eyebrow {
+        font-size: 11px;
+    }
+
+    .origin__content h2 {
+        margin-bottom: 16px;
+        font-size: clamp(25px, 7vw, 32px);
     }
 
     .origin__content p {
